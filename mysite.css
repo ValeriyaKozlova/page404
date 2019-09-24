@@ -1,0 +1,75 @@
+body {
+    background-image: url(images/route.jpg);
+    background-size: cover;
+    font-family: 'Oswald', sans-serif;
+    color: darkblue;
+    font-size: 28px;
+}
+* {
+    box-sizing: border-box;
+}
+section{
+margin: 15px 15 px;
+}
+.container {
+    position: relative;
+    display: grid;
+    max-width: 900px;
+    margin: auto;
+    grid-template-columns: repeat(2, fr);
+    grid-gap: 15px;
+}
+.text-container {
+    height: 100vh;
+}
+
+.col-2 {
+    position: relative;
+    grid-column: 2 span;
+    text-align: left;
+
+}
+.heart {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: calc(50% - 25px);
+    top: calc(50% - 25px);
+    background-color: darkblue;
+    transform: rotate(-45deg);
+    animation:  dissappearing 4s ease 1s 1 normal forwards;
+}
+.heart:before,
+.heart:after {
+    content: "";
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color:darkblue;
+    border-radius: 50%;
+}
+.heart:before {
+    top: -25px;
+    left: 0;
+}
+.heart:after {
+    left: 25px;
+    top: 0px;
+}
+@keyframes dissappearing{
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.transform {
+    display:inline-block;
+    transition: transform .6s;
+}
+
+.transform:hover {
+    transform: scale(2, 2);
+}
